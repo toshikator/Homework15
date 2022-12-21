@@ -12,8 +12,6 @@ function test1(){
     arrayCopy(strArray1, 3, resArr, 1, 1);
     console.log(resArr); // expected ["lll","ddd","mmm"]
 }
-
-
 function test2(){
     console.log(count(strArray1, "ddd")); // expected 1
     console.log(count(numArray,6)); // expected 3
@@ -23,6 +21,9 @@ function test3(){
     displayOccurrences(strArray1);
     displayOccurrences(numArray);
 }
+
+
+
 function test4(){
     const res = ulSurround(strArray1);
     console.log(res);
@@ -37,7 +38,11 @@ function arrayCopy(src,srcPos,dst,dstPos,length){
     dst.splice(dstPos, 0, ...src.slice(srcPos,srcPos+length));
 }
 function count(array, str){
-    //TODO implement here
+    return array.reduce( function (accumulator, item) {
+        //console.log('accumulator', accumulator);
+        if(str === item) accumulator = accumulator+1;
+        return accumulator;
+    },0)
 }
 function displayOccurrences(array){
     //TODO implement here
