@@ -21,13 +21,13 @@ function test3(){
     displayOccurrences(strArray1);
     displayOccurrences(numArray);
 }
-
-
-
 function test4(){
     const res = ulSurround(strArray1);
     console.log(res);
 }
+
+
+
 function test5(){
     const res = lengthSort(strArray2);
     console.log(res); // expected ["I","a","am","JS","hello","world","developer"]
@@ -44,16 +44,13 @@ function count(array, str){
         return accumulator;
     },0)
 }
-
-
 function displayOccurrences(array){
     let result = [];
     array.forEach(function (value) {
         if(!result.includes(value)){
             result.push(value)
         }
-    })
-    // let result2 = [];
+    });
     const result2 = result.map(function (element) {
         const amount = array.reduce(function (accumulator, item) {
             if (item === element){
@@ -66,8 +63,7 @@ function displayOccurrences(array){
     });
     result2.forEach(function (element) {
         console.log(`${element[0]} -> ${element[1]}`);
-    })
-
+    });
 }
 
 
