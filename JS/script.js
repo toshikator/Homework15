@@ -44,9 +44,34 @@ function count(array, str){
         return accumulator;
     },0)
 }
+
+
 function displayOccurrences(array){
-    //TODO implement here
+    let result = [];
+    array.forEach(function (value) {
+        if(!result.includes(value)){
+            result.push(value)
+        }
+    })
+    // let result2 = [];
+    const result2 = result.map(function (element) {
+        const amount = array.reduce(function (accumulator, item) {
+            if (item === element){
+                return accumulator += 1;
+            } else {
+                return accumulator;
+            }
+        },0);
+        return [element, amount];
+    });
+    result2.forEach(function (element) {
+        console.log(`${element[0]} -> ${element[1]}`);
+    })
+
 }
+
+
+
 function ulSurround(strings){
     //TODO implement here
 }
