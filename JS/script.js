@@ -25,9 +25,6 @@ function test4(){
     const res = ulSurround(strArray1);
     console.log(res);
 }
-
-
-
 function test5(){
     const res = lengthSort(strArray2);
     console.log(res); // expected ["I","a","am","JS","hello","world","developer"]
@@ -65,12 +62,22 @@ function displayOccurrences(array){
         console.log(`${element[0]} -> ${element[1]}`);
     });
 }
-
-
-
 function ulSurround(strings){
-    //TODO implement here
+    const resultString = strings.map(function (element) {
+         const result = [];
+         return result.concat('<li>',element,'</li>').join('');
+    });
+    resultString.splice(0,0,'<ul>');
+    resultString.splice(resultString.length,0,'</ul>');
+    return resultString;
 }
 function lengthSort(array){
-    //TODO implement here
+    array.sort(function (a,b) {
+        if (a.length > b.length){
+            return 1
+        } else if(a.length < b.length){
+            return -1;
+        } else return 0;
+    });
+    return array;
 }
